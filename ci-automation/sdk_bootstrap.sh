@@ -75,7 +75,7 @@ function sdk_bootstrap() {
     #   (`scripts` and submodules).
     local push_branch="false"
     if   [[ "${version}" =~ ^main-[0-9.]+-nightly-[-0-9]+$ ]] \
-       && [ "$(git rev-parse --abbrev-ref HEAD)" = "main"  ] \
+       && [ "$(git rev-parse --abbrev-ref HEAD)" = "kai/sdk-from-release-tag"  ] \
        && [ "$(git -C sdk_container/src/third_party/coreos-overlay/ rev-parse --abbrev-ref HEAD)" = "main"  ] \
        && [ "$(git -C sdk_container/src/third_party/portage-stable/ rev-parse --abbrev-ref HEAD)" = "main"  ] ; then
         push_branch="true"
