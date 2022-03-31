@@ -86,7 +86,7 @@ function packages_build() {
     #   (`scripts` and submodules).
     local push_branch="false"
     if   [[ "${version}" =~ ^(stable|alpha|beta|lts)-[0-9.]+-nightly-[-0-9]+$ ]] \
-       && [[ "$(git rev-parse --abbrev-ref HEAD)" =~ ^flatcar-[0-9]+$ ]] \
+       && [[ "$(git rev-parse --abbrev-ref HEAD)" =~ kai/sdk-from-release-tag ]] \
        && [[ "$(git -C sdk_container/src/third_party/coreos-overlay/ rev-parse --abbrev-ref HEAD)" =~ ^flatcar-[0-9]+$ ]] \
        && [[ "$(git -C sdk_container/src/third_party/portage-stable/ rev-parse --abbrev-ref HEAD)" =~ ^flatcar-[0-9]+$ ]] ; then
         push_branch="true"
