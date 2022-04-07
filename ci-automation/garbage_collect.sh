@@ -132,4 +132,12 @@ function garbage_collect() {
             echo "## (DRY_RUN=y so not doing anything) ##"
         fi
     done
+
+    ## Let's clear the cloud provider resources created during the tests.
+    if [ "$dry_run" != "y" ] ; then
+        vendors=($(find ci-automation/vendor-testing -not -name "qemu*" -type f -printf "%f "))
+        for vendor in "${vendors[@]}"; do
+            ore "${vendor%.*}" gc --duration 2h
+        done
+    fi
 }
