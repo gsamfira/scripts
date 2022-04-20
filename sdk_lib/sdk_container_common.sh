@@ -47,6 +47,10 @@ function yell() {
 # Guess the SDK version from the current git commit.
 #
 function get_git_version() {
+    if [[ -f '.git_version' ]]; then
+        cat '.git_version'
+        return
+    fi
     local tag="$(git tag --points-at HEAD)"
     if [ -z "$tag" ] ; then
         git describe --tags

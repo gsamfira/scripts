@@ -107,6 +107,7 @@ function test_run() {
 
     source ci-automation/tapfile_helper_lib.sh
     source ci-automation/ci_automation_common.sh
+    source sdk_lib/sdk_container_common.sh
     init_submodules
 
     source sdk_container/.repo/manifests/version.txt
@@ -117,6 +118,8 @@ function test_run() {
     local work_dir="__TESTS__"
     local tests_dir="${work_dir}/${image}"
     mkdir -p "${tests_dir}"
+
+    get_git_version >"${tests_dir}/.git_version"
 
     local container_name="flatcar-tests-${arch}-${docker_vernum}-${image}"
     local mantle_ref
