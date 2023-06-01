@@ -22,12 +22,14 @@ jobs:
     environment: development
     outputs:
       sdk_changes: ${{ steps.step1.outputs.sdk_changes }}
+      bincachessh: ${{ steps.step1.outputs.bincachessh }}
     steps:
       - name: Set outputs
         id: step1
         shell: bash
         run: |
           echo "sdk_changes=${{ contains(github.event.pull_request.body, '/update-sdk') }}" >> $GITHUB_OUTPUT
+          echo "bincachessh=${{ secrets.BINCACHESSH }}" >> $GITHUB_OUTPUT
 
   update_sdk:
     name: "Build an updated SDK container"
@@ -37,11 +39,22 @@ jobs:
     secrets: inherit
     uses: ./.github/workflows/update-sdk.yaml
 
+  print_output:
+    name: "print output"
+    needs: [ update_sdk ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: print output
+        shell: bash
+        run: |
+          echo ${{ needs.update_sdk.outputs.sdk_version }}
+
   build_image:
     needs: [ update_sdk ]
     if: (always() && ! cancelled()) && needs.update_sdk.result != 'failure'
     name: "Build the OS image"
     uses: ./.github/workflows/ci.yaml
     with:
-      custom_sdk_version: ${{ needs.update_sdk.outputs.sdk_version }}
+      # custom_sdk_version: ${{ needs.update_sdk.outputs.sdk_version }}
+      custom_sdk_version: ${{ github.workflow }}
       image_formats: qemu_uefi
