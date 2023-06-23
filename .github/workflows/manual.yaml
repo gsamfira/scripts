@@ -1,0 +1,24 @@
+name: "Test Workflow"
+on:
+  workflow_dispatch:
+    inputs:
+      lables:
+        type: string
+        required: false
+        default: x64
+      sleep:
+        type: number
+        required: false
+        default: 2
+
+jobs:
+  packages:
+    name: "Do nothing"
+    runs-on:
+      - self-hosted
+      - ${{ github.event.inputs.lables }}
+    steps:
+    - name: "Do nothing"
+      run: |
+        echo "Hello world"
+        sleep ${{ github.event.inputs.sleep }}
