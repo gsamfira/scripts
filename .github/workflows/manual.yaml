@@ -12,8 +12,28 @@ on:
         default: 2
 
 jobs:
-  packages:
+  doNothing1:
     name: "Do nothing"
+    runs-on:
+      - self-hosted
+      - ${{ github.event.inputs.lables }}
+    steps:
+    - name: "Do nothing"
+      run: |
+        echo "Hello world"
+        sleep ${{ github.event.inputs.sleep }}
+  doNothing2:
+    name: "Do nothing2"
+    runs-on:
+      - self-hosted
+      - ${{ github.event.inputs.lables }}
+    steps:
+    - name: "Do nothing"
+      run: |
+        echo "Hello world"
+        sleep ${{ github.event.inputs.sleep }}
+  doNothing3:
+    name: "Do nothin3"
     runs-on:
       - self-hosted
       - ${{ github.event.inputs.lables }}
