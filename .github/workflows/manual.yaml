@@ -42,3 +42,23 @@ jobs:
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
+  doNothing4:
+    name: "Do nothin4"
+    runs-on:
+      - self-hosted
+      - ${{ github.event.inputs.lables }}
+    steps:
+    - name: "Do nothing"
+      run: |
+        echo "Hello world"
+        sleep ${{ github.event.inputs.sleep }}
+  doNothing5:
+    name: "Do nothin5"
+    runs-on:
+      - self-hosted
+      - ${{ github.event.inputs.lables }}
+    steps:
+    - name: "Do nothing"
+      run: |
+        echo "Hello world"
+        sleep ${{ github.event.inputs.sleep }}
