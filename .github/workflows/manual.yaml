@@ -13,14 +13,14 @@ on:
 
 jobs:
   doNothing1:
-    name: "Do nothing"
+    name: "Do nothing1"
     runs-on:
-      group: Default2
+      group: Default
       labels:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing2"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -30,7 +30,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing3"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -40,7 +40,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing4"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -50,7 +50,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing5"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -60,27 +60,27 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing6"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
   doNothing6:
-    name: "Do nothing"
+    name: "Do nothing7"
     runs-on:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing8"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
   doNothing7:
-    name: "Do nothing2"
+    name: "Do nothing9"
     runs-on:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing10"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -90,7 +90,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing11"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -100,7 +100,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing12"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
@@ -110,7 +110,7 @@ jobs:
       - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
-    - name: "Do nothing"
+    - name: "Do nothing13"
       run: |
         echo "Hello world"
         sleep ${{ github.event.inputs.sleep }}
