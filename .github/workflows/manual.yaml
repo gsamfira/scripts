@@ -15,7 +15,7 @@ jobs:
   doNothing1:
     name: "Do nothing1"
     runs-on:
-      group: Default
+      group: Default11
       labels:
       - self-hosted
       - ${{ github.event.inputs.lables }}
