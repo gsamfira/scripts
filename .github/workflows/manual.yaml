@@ -15,7 +15,6 @@ jobs:
   doNothing1:
     name: "Do nothing1"
     runs-on:
-      group: gsamfiraGroup
       labels:
       - self-hosted
       - ${{ github.event.inputs.lables }}
