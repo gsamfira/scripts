@@ -16,7 +16,6 @@ jobs:
     name: "Do nothing1"
     runs-on:
       labels:
-      - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
     - name: "Do nothing2"
