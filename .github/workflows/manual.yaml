@@ -25,7 +25,6 @@ jobs:
   doNothing2:
     name: "Do nothing2"
     runs-on:
-      - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
     - name: "Do nothing3"
@@ -35,7 +34,6 @@ jobs:
   doNothing3:
     name: "Do nothin3"
     runs-on:
-      - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
     - name: "Do nothing4"
@@ -45,7 +43,6 @@ jobs:
   doNothing4:
     name: "Do nothin4"
     runs-on:
-      - self-hosted
       - ${{ github.event.inputs.lables }}
     steps:
     - name: "Do nothing5"
